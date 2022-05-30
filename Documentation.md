@@ -30,7 +30,7 @@ automatically generated](./media/image2.png)
 
 The above shown security groups are explained below
 
-Default*:*
+### Default:
 
 ![Graphical user interface, text, application Description automatically
 generated](./media/image3.png)
@@ -111,7 +111,7 @@ sudo apt-get update && sudo apt-get install -f -y
 This will install the required driver on the machine that needs to be
 migrated.
 
-## Migrate for Compute Engine in GCP
+# Migrate for Compute Engine in GCP
 
 If you have configured the VPN correctly, you will see 'migrate for
 compute engine' option in your compute engine screen.
@@ -176,21 +176,25 @@ Enter the required information
 ![Graphical user interface, application, Word Description automatically
 generated](./media/image15.png)
 
+\
 Do the same for service account for cloud extensions
 
 ![Graphical user interface, application Description automatically
 generated](./media/image16.png)
 
+\
 Write a secure password for your "migration manager 'api user' user
 password" and "private key password"
 
 ![Graphical user interface, text, application Description automatically
 generated](./media/image17.png)
 
+\
 Click continue. Review your information and click create. This will take
 a few minutes to create, since it is a relatively big VM.
 
-# Preparing AWS credentials:
+
+# Preparing AWS credentials
 
 We need to set up a user in AWS in order to have access from the
 migration manager.
@@ -217,10 +221,13 @@ https://cloud.google.com/migrate/compute-engine/docs/4.8/how-to/migrate-aws-to-g
 generated with medium
 confidence](./media/image19.png)
 
+\
 Attach an AdministratorAccess policy to this user and proceed forward.
 
 There is no need to use tags for now, so proceed forward. Review the
 details, and click create user
+
+
 
 ![Graphical user interface, text, application, email Description
 automatically
