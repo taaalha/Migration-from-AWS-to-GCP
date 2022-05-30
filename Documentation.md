@@ -490,3 +490,4 @@ You will see a new instance running in the Compute engine page. You can
 then assign it a public IP if you want to access it from the internet.
 
 
+If you have any questions, please reach out at talha.khalid@nordcloud.com
