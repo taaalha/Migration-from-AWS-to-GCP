@@ -6,10 +6,9 @@ A virtual private gateway was used to establish the VPN used for this
 tutorial. If you have used a transit gateway, some steps might be
 different.
 
-# Firewall rules 
+# Firewall rules and Security Groups
 
-A very important part of doing migrations is configuring the firewall
-rules.
+A very important part of doing migrations is configuring the firewall rules and security groups.
 
 These firewall rules should be on the **gcp** side. Even though the
 first firewall rule encompasses all the firewall rules beneath it, for
