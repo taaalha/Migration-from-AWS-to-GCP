@@ -422,7 +422,7 @@ For the VM that you want to migrate, change the 'RunGroup' column from
 -1 to 1. Then scroll to the right, and for 'target instance type', write
 n1-standard-1.
 
-Click on file→download→comma separate values (.csv)
+Click on file-->download-->comma separate values (.csv)
 
 This will download the file to your local machine
 
@@ -448,7 +448,7 @@ generated](./media/image36.png)
 Say Yes to run validation prompt.
 
 When the validation status says "Passed", click on the wave again to
-select it. Then Action→New job
+select it. Then Action-->New job
 
 For operation, use Full migration, and click start.
 
