@@ -16,8 +16,7 @@ first firewall rule encompasses all the firewall rules beneath it, for
 some reason we still need them. This may change at some later point.
 
 ![Graphical user interface, text, application Description automatically
-generated](./media/image1.png){width="6.268055555555556in"
-height="1.1854166666666666in"}
+generated](./media/image1.png)
 
 The second last ip CIDR range is the AWS VPC with which you have a VPN
 connection established. It would be different for you.
@@ -27,16 +26,14 @@ connection established. It would be different for you.
 These security groups should be on AWS side
 
 ![Graphical user interface, text, application, email Description
-automatically generated](./media/image2.png){width="6.268055555555556in"
-height="1.8444444444444446in"}
+automatically generated](./media/image2.png)
 
 The above shown security groups are explained below
 
 Default*:*
 
 ![Graphical user interface, text, application Description automatically
-generated](./media/image3.png){width="6.268055555555556in"
-height="1.6666666666666667in"}
+generated](./media/image3.png)
 
 This is the security group that velostrata importer should use. This is
 set up when setting source cloud in migration manager. (Will be
@@ -48,51 +45,44 @@ group.
 ### Aws-allow-ssh:
 
 ![Graphical user interface, text, application Description automatically
-generated](./media/image4.png){width="6.268055555555556in"
-height="1.1076388888888888in"}
+generated](./media/image4.png)
 
 ### Aws-allow-icmp:
 
 ![Graphical user interface, application Description automatically
-generated](./media/image5.png){width="6.268055555555556in"
-height="1.0854166666666667in"}
+generated](./media/image5.png)
 
 ### Aws-allow-internet:
 
 ![Graphical user interface, text, application Description automatically
-generated](./media/image6.png){width="6.268055555555556in"
-height="1.0569444444444445in"}
+generated](./media/image6.png)
 
 ![Graphical user interface, text, application Description automatically
-generated](./media/image7.png){width="6.268055555555556in"
-height="1.0916666666666666in"}
+generated](./media/image7.png)
 
 ### Aws-allow-vpn:
 
 ![Graphical user interface, application Description automatically
-generated](./media/image8.png){width="6.268055555555556in"
-height="1.1006944444444444in"}
+generated](./media/image8.png)
 
 The following security groups should be attached to the AWS instance to
 be migrated.
 
 ![Graphical user interface, application Description automatically
 generated with medium
-confidence](./media/image9.png){width="6.268055555555556in"
-height="1.3506944444444444in"}
+confidence](./media/image9.png)
 
 ### Route table for AWS
 
 ![Graphical user interface, text, application, email Description
 automatically
-generated](./media/image10.png){width="6.268055555555556in"
-height="2.6694444444444443in"}
+generated](./media/image10.png)
 
 10.240.0.0/24 is the GCP CIDR range. Yours might be different. Make sure
 that the route from virtual private gateway to the GCP CIDR range is
 propagated.
 
-# Prepare VM on AWS
+# Prepare VM's on AWS
 
 In order to migrate a VM using Velostrata, you need to prepare the VM by
 installing a driver on it. The drivers differ depending on the OS, and
@@ -127,8 +117,7 @@ If you have configured the VPN correctly, you will see 'migrate for
 compute engine' option in your compute engine screen.
 
 ![Graphical user interface, text, application, email Description
-automatically generated](./media/image11.png){width="4.49575021872266in"
-height="2.8963867016622924in"}
+automatically generated](./media/image11.png)
 
 Click on it. You will need to enable the VM migration API. Once the API
 is enabled, it will prompt you to create credentials. There is no need
@@ -185,21 +174,18 @@ and select Create service account.
 Enter the required information
 
 ![Graphical user interface, application, Word Description automatically
-generated](./media/image15.png){width="5.813689851268592in"
-height="3.3383945756780404in"}
+generated](./media/image15.png)
 
 Do the same for service account for cloud extensions
 
 ![Graphical user interface, application Description automatically
-generated](./media/image16.png){width="5.802867454068242in"
-height="3.1373807961504814in"}
+generated](./media/image16.png)
 
 Write a secure password for your "migration manager 'api user' user
 password" and "private key password"
 
 ![Graphical user interface, text, application Description automatically
-generated](./media/image17.png){width="3.894873140857393in"
-height="1.8166863517060368in"}
+generated](./media/image17.png)
 
 Click continue. Review your information and click create. This will take
 a few minutes to create, since it is a relatively big VM.
@@ -218,8 +204,7 @@ Type a useful name and select the "Programmatic Access" credential type.
 
 ![Graphical user interface, text, application, email Description
 automatically
-generated](./media/image18.png){width="4.2839041994750655in"
-height="2.3341721347331585in"}
+generated](./media/image18.png)
 
 For the purposes of this tutorial, we will attach an administrator
 access policy to this user. However, for production work loads, this is
@@ -230,8 +215,7 @@ https://cloud.google.com/migrate/compute-engine/docs/4.8/how-to/migrate-aws-to-g
 
 ![Graphical user interface, application Description automatically
 generated with medium
-confidence](./media/image19.png){width="4.75777012248469in"
-height="2.651405293088364in"}
+confidence](./media/image19.png)
 
 Attach an AdministratorAccess policy to this user and proceed forward.
 
@@ -240,8 +224,7 @@ details, and click create user
 
 ![Graphical user interface, text, application, email Description
 automatically
-generated](./media/image20.png){width="5.048336614173229in"
-height="2.7227241907261592in"}
+generated](./media/image20.png)
 
 Download the CSV file by clicking on the "download .csv" button. You
 will need this information in the next step.
@@ -252,8 +235,7 @@ To access the migration manager, go to the compute engine page, and copy
 the external IP of the instance.
 
 ![Graphical user interface, text, email Description automatically
-generated](./media/image21.png){width="6.268055555555556in"
-height="1.5590277777777777in"}
+generated](./media/image21.png)
 
 Open a new browser tab, paste this ip address there, and press enter.
 
@@ -262,8 +244,7 @@ Migration manager uses a self-signed certificate, therefore, to proceed
 further, click on advanced, and click on "proceed to" the relevant ip.
 
 ![Graphical user interface, application, Teams Description automatically
-generated](./media/image22.png){width="3.846258748906387in"
-height="2.971836176727909in"}
+generated](./media/image22.png)
 
 Use the following credentials
 | <!-- -->    | <!-- -->    |
@@ -280,8 +261,7 @@ Click yes for both stack driver logging and metrics and proceed forward.
 
 ![Graphical user interface, text, application, email Description
 automatically
-generated](./media/image23.png){width="4.638822178477691in"
-height="2.3908486439195102in"}
+generated](./media/image23.png)
 
 ## Setting up source cloud:
 
@@ -292,8 +272,7 @@ Click on cloud credentials tab, and click create.
 Enter the following information
 
 ![Graphical user interface Description automatically
-generated](./media/image24.png){width="4.6153051181102365in"
-height="2.399180883639545in"}
+generated](./media/image24.png)
 | <!-- -->    | <!-- -->    |
 |-------------|-------------|
 |**Credential Name**|Could be any|
@@ -308,8 +287,7 @@ Now click on 'Cloud details' tab and click create. Use the following
 info
 
 ![Graphical user interface, text, application Description automatically
-generated](./media/image25.png){width="4.3494313210848645in"
-height="2.531304680664917in"}
+generated](./media/image25.png)
 
 Again, for region, use the region in which your infrastructure is
 deployed. If you have set up the credentials correctly in the previous
@@ -331,8 +309,7 @@ subnet range.
 
 ![Graphical user interface, text, application, email Description
 automatically
-generated](./media/image26.png){width="4.592727471566055in"
-height="2.839796587926509in"}
+generated](./media/image26.png)
 
 Click on OK.
 
@@ -342,8 +319,7 @@ After some time, the status would be completed to Ready.
 
 ![Graphical user interface, text, application, email Description
 automatically
-generated](./media/image27.png){width="5.098068678915135in"
-height="2.223132108486439in"}
+generated](./media/image27.png)
 
 ## Setting up Target Cloud
 
@@ -365,15 +341,13 @@ Use the following information
 
 
 ![Graphical user interface, text, application, email Description
-automatically generated](./media/image28.png){width="4.53000656167979in"
-height="2.1726574803149608in"}
+automatically generated](./media/image28.png)
 
 For default service account for workloads, use the service account you
 created for cloud extensions during the setup of migration manager.
 
 ![Graphical user interface, application Description automatically
-generated](./media/image29.png){width="4.736575896762905in"
-height="2.0476541994750654in"}
+generated](./media/image29.png)
 
 Click on Cloud extensions, and use the following information
 | <!-- -->    | <!-- -->    |
@@ -385,15 +359,13 @@ Click on Cloud extensions, and use the following information
 
 ![Graphical user interface, text, application, email Description
 automatically
-generated](./media/image30.png){width="4.862622484689414in"
-height="1.8182305336832896in"}
+generated](./media/image30.png)
 
 Click on Zones, and enter the following information
 
 ![Graphical user interface, text, application, email Description
 automatically
-generated](./media/image31.png){width="5.065416666666667in"
-height="1.9052843394575678in"}
+generated](./media/image31.png)
 
 You might have different zones and subnets available, so decide
 according to the options you have.
@@ -406,8 +378,7 @@ get something like the following
 
 ![Graphical user interface, text, application, email Description
 automatically
-generated](./media/image32.png){width="4.989102143482064in"
-height="2.100057961504812in"}
+generated](./media/image32.png)
 
 ## Migration waves
 
@@ -424,8 +395,7 @@ Click generate runbook, and use the following information
 
 
 ![Graphical user interface, website Description automatically
-generated](./media/image33.png){width="4.232280183727034in"
-height="3.2738517060367456in"}
+generated](./media/image33.png)
 
 Click create
 
@@ -446,13 +416,12 @@ For the VM that you want to migrate, change the 'RunGroup' column from
 -1 to 1. Then scroll to the right, and for 'target instance type', write
 n1-standard-1.
 
-Click on filedownloadcomma separate values (.csv)
+Click on file→download→comma separate values (.csv)
 
 This will download the file to your local machine
 
 ![Graphical user interface, application, Word Description automatically
-generated](./media/image34.png){width="6.268055555555556in"
-height="1.0576388888888888in"}
+generated](./media/image34.png)
 
 Go back to the migration manager tab, and click on new wave. Give it a
 relevant name, and use the file that you just downloaded. Make sure to
@@ -460,8 +429,7 @@ use the edited file that you just downloaded.
 
 ![Graphical user interface, text, application, chat or text message
 Description automatically
-generated](./media/image35.png){width="4.395056867891514in"
-height="2.4035017497812774in"}
+generated](./media/image35.png)
 
 Click save
 
@@ -469,28 +437,24 @@ Now click on the name. This will highlight the entire row. Click on
 action and click on validate.
 
 ![Graphical user interface, text, application Description automatically
-generated](./media/image36.png){width="5.492688101487314in"
-height="2.526052055993001in"}
+generated](./media/image36.png)
 
 Say Yes to run validation prompt.
 
 When the validation status says "Passed", click on the wave again to
-select it. Then ActionNew job
+select it. Then Action→New job
 
 For operation, use Full migration, and click start.
 
 ![Graphical user interface, text, application Description automatically
-generated](./media/image37.png){width="4.046037839020123in"
-height="1.2591754155730535in"}
+generated](./media/image37.png)
 
 Click on the monitor icon
 
 ![Graphical user interface, text, application Description automatically
-generated](./media/image38.png){width="5.174323053368329in"
-height="1.200424321959755in"}
+generated](./media/image38.png)
 
-![](./media/image39.png){width="6.268055555555556in"
-height="0.7534722222222222in"}
+![](./media/image39.png)
 
 You can refresh the page to get updated status of migration. However,
 the migration will take some time.
@@ -500,25 +464,21 @@ stopped. On the GCP side, you will notice on the compute engine page
 that 2 velostrata edge node instances are running.
 
 ![Graphical user interface, application Description automatically
-generated](./media/image40.png){width="6.268055555555556in"
-height="1.0020833333333334in"}
+generated](./media/image40.png)
 
 ![Graphical user interface, application Description automatically
-generated](./media/image41.png){width="5.2003423009623795in"
-height="1.5959383202099737in"}
+generated](./media/image41.png)
 
 ![Graphical user interface, text, application, email Description
 automatically
-generated](./media/image42.png){width="6.268055555555556in"
-height="1.21875in"}
+generated](./media/image42.png)
 
 When the migration status says Ready to Detach, it means that your VM
 has been migrated.
 
 ![Graphical user interface, text, application, email, website
 Description automatically
-generated](./media/image43.png){width="6.268055555555556in"
-height="0.9145833333333333in"}
+generated](./media/image43.png)
 
 You will see a new instance running in the Compute engine page. You can
 then assign it a public IP if you want to access it from the internet.
