@@ -214,6 +214,7 @@ access policy to this user. However, for production work loads, this is
 not recommended. The correct way of assigning user permissions can be
 found from the following link.
 
+\
 https://cloud.google.com/migrate/compute-engine/docs/4.8/how-to/migrate-aws-to-gcp/aws-prerequisites#creating_the_iam_group
 
 ![Graphical user interface, application Description automatically
@@ -489,5 +490,15 @@ generated](./media/image43.png)
 You will see a new instance running in the Compute engine page. You can
 then assign it a public IP if you want to access it from the internet.
 
+
+# Troubleshooting
+
+If something is not working properly, or your migration gets stuck at some percentage, consider utilizing the logs from GCP. 
+
+To do that, go to GCP console --> logging --> logs explorer
+
+In the *log fields section*, search for *Edge Node*, and click it. 
+
+Look for an entry that ends in *velostrata manager*. After clicking on it, you can see the logs. 
 
 If you have any questions, please reach out at talha.khalid@nordcloud.com
