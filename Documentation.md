@@ -501,4 +501,6 @@ In the *log fields section*, search for *Edge Node*, and click it.
 
 Look for an entry that ends in *velostrata manager*. After clicking on it, you can see the logs. 
 
+Security Groups, Internet Gateway and Route Tables configuration from AWS side and Firewall in GCP side are most common areas to check when migration doesn't go as planned. 
+
 If you have any questions, please reach out at talha.khalid@nordcloud.com
