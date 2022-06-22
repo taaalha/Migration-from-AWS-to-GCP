@@ -13,6 +13,7 @@ Virtual Private Network (VPN) can facilitate private connection and thus, transf
 The steps are gone through sequentially in the document and screenshots and explanations are provided when deemed necessary and possible. 
 
 ![VPN architecture diagram as shown in Google documentation](./media/vpn-images/1%20Arch%20diagram.png)
+ 
  VPN architecture diagram as shown in Google documentation.
 
 ---
@@ -140,5 +141,10 @@ Repeat it for all BGP sessions and click “Save BGP Configuration” and finish
 ![Screenshot image 15](./media/vpn-images/15.GCP_VPN_tunnel_ready.png)
 
 In the next screen your connections should be established. 
+
+***In your AWS Console, you need to enable the route propagation.*** From AWS Console goto Services > VPC > Route Tables.
+
+In the screen, the list of route tables are shown. Click on the Route Table you just created and from the panel click on “Route Propagation” tab. Click  “Edit Route Propagation” > Click the “Enable” under Propagation and Save. The VPN connection is ready now.
+
 
 You can check the VPN connection anyway you want. 
