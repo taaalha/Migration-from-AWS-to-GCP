@@ -503,4 +503,4 @@ Look for an entry that ends in *velostrata manager*. After clicking on it, you c
 
 Security Groups, Internet Gateway and Route Tables configuration from AWS side and Firewall in GCP side are most common areas to check when migration doesn't go as planned. 
 
-If you have any questions, please reach out at talha.khalid@nordcloud.com
+If you have any questions, please reach out to me :) 
